@@ -84,3 +84,22 @@ function imparesCuadrado(numeros){
 function normalizarEmail(emails) {
     return emails.map(email => email.trim());
 }
+
+/**
+ * Esta funcion recibe un array de nombres y un numero, la longitud minima. 
+ * La funcion devolverá los nombres del array que tengan una longitud mayor o igual al proporcionado al parámetro de longitud
+ * @param {string} nombres 
+ * @param {number} longitud 
+ * @returns Los nombres del array proporiconado que sean mayor o igual al parámetro de longitud
+ */
+function filtrarLongitud(nombres, longitud) {
+    return nombres.filter(nombre => nombre.length >= longitud);
+}
+
+function normalizarNombresPropios(nombres){
+    return nombres.map(nombre =>
+        nombre.split("")
+        .map(palabra=>palabra.charAt(0).toUpperCase() + palabra.slice(1))
+        .join(" ")
+    )
+}
