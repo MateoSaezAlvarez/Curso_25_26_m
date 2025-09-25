@@ -46,3 +46,21 @@ es mayor o igual al parámetro colocado
 
 Normalizar nombres propios que le pase como parámetro un array de nombres y me los devuelva con la letra capital (la primera letra) en mayúscula
 */
+/**
+ * Esta función recorre un array y crea otro array con los nombres del primero en mayúsculas. 
+ * En ningún momento muta el primer array pasado como parámetro
+ * @param {string} nombres 
+ * @returns Los nombres del array en mayúsculas.
+ */
+function mayusculas(nombres) {
+    return nombres.map(nombre => nombre.toUpperCase());
+}
+/**
+ * Esta función crea un nuevo array y se llena con los elementos del array pasado como parámetro y no muta el parámetro.
+ * @param {number} precios 
+ * @returns 
+ */
+function preciosConIVA(precios) {
+    return precios.map(precio => precio * 1.21);
+}
+
