@@ -58,9 +58,29 @@ function mayusculas(nombres) {
 /**
  * Esta función crea un nuevo array y se llena con los elementos del array pasado como parámetro y no muta el parámetro.
  * @param {number} precios 
- * @returns 
+ * @returns un array nuevo con unos números a los que se les aplica el IVA
  */
 function preciosConIVA(precios) {
     return precios.map(precio => precio * 1.21);
 }
 
+/**
+ * Esta función recibe un array de numeros, los filtra para que qeuden los impares
+ * y posteriormente eleva los números impares al cuadrado.
+ * @param {number} numeros 
+ * @returns Los numeros impares elevados al cuadrado
+ */
+function imparesCuadrado(numeros){
+    return numeros.filter(numero => numero % 2 !== 0).map(numero => numero * numero);
+
+}
+
+/**
+ * Esta función recibe un array de emails con espacios tanto al principio como al final,
+ * y devuelve esos mismos correos con los espacios bien puestos. No se muta el array original
+ * @param {string} emails 
+ * @returns el array de emails sin espacios al principio ni al final.
+ */
+function normalizarEmail(emails) {
+    return emails.map(email => email.trim());
+}
