@@ -52,17 +52,14 @@ Normalizar nombres propios que le pase como parámetro un array de nombres y me 
  * @param {string} nombres 
  * @returns Los nombres del array en mayúsculas.
  */
-function mayusculas(nombres) {
-    return nombres.map(nombre => nombre.toUpperCase());
-}
+const mayusculas = (nombres) => nombres.map(nombre => nombre.toUpperCase());
+ 
 /**
  * Esta función crea un nuevo array y se llena con los elementos del array pasado como parámetro y no muta el parámetro.
  * @param {number} precios 
  * @returns un array nuevo con unos números a los que se les aplica el IVA
  */
-function preciosConIVA(precios) {
-    return precios.map(precio => precio * 1.21);
-}
+preciosConIVA = (precios) => precios.map(precio => precio * 1.21);
 
 /**
  * Esta función recibe un array de numeros, los filtra para que qeuden los impares
@@ -70,10 +67,7 @@ function preciosConIVA(precios) {
  * @param {number} numeros 
  * @returns Los numeros impares elevados al cuadrado
  */
-function imparesCuadrado(numeros){
-    return numeros.filter(numero => numero % 2 !== 0).map(numero => numero * numero);
-
-}
+const imparesCuadrado=(numeros)=> numeros.filter(numero => numero % 2 !== 0).map(numero => numero * numero);
 
 /**
  * Esta función recibe un array de emails con espacios tanto al principio como al final,
@@ -81,9 +75,8 @@ function imparesCuadrado(numeros){
  * @param {string} emails 
  * @returns el array de emails sin espacios al principio ni al final.
  */
-function normalizarEmail(emails) {
-    return emails.map(email => email.trim());
-}
+const normalizarEmail= (emails) => emails.map(email => email.trim());
+
 
 /**
  * Esta funcion recibe un array de nombres y un numero, la longitud minima. 
@@ -92,13 +85,17 @@ function normalizarEmail(emails) {
  * @param {number} longitud 
  * @returns Los nombres del array proporiconado que sean mayor o igual al parámetro de longitud
  */
-function filtrarLongitud(nombres, longitud) {
-    return nombres.filter(nombre => nombre.length >= longitud);
-}
+const filtrarLongitud=(nombres, longitud) => nombres.filter(nombre => nombre.length >= longitud);
 
-function normalizarNombresPropios(nombres){
+/**
+ * Esta función recibe un array de nombres propios, tanto simples como compuestos, con mayúsuculas en cualquier posición.
+ * Esta función creará otro array que guardará los nombres con la ortografía de las mayúsculas correcta.
+ * @param {string} nombres 
+ * @returns Otro array de nombres con la letra capital en mayúscula
+ */
+const normalizarNombresPropios = (nombres)=>{
     return nombres.map(nombre =>
-        nombre.split("")
+        nombre.split(" ")
         .map(palabra=>palabra.charAt(0).toUpperCase() + palabra.slice(1))
         .join(" ")
     )
