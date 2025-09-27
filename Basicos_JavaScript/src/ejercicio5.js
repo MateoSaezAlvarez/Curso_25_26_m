@@ -84,7 +84,7 @@ frutas.reduce((acc,fruta)=>{
 //Obtener el promedio total de todos los libros si suponemos un precio medio de 28€
 //Decir qué usuarios no tienen libros
 
-
+/*
 console.log(usuarios.reduce((acc,usuario)=>
     usuario.data.books>20 ? acc.concat(usuario.name) : acc
 ,[]))
@@ -96,7 +96,7 @@ console.log(usuarios.reduce((acc,usuario)=>
     usuario.data.books==0 ? usuario.name:acc),
 "")
 
-
+*/
 
 const productos = [
     {id:1, nombre: "Laptop", precio: 1200, stock: 5, categoria: "Tecnología"},
@@ -108,3 +108,8 @@ const productos = [
 ]
 
 //Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoria ropa
+
+const ropaDescuento = productos.map(producto => 
+    producto.categoria === "Ropa" ? {...producto, precio:producto.precio*0.9} : producto
+);
+console.log(ropaDescuento);
