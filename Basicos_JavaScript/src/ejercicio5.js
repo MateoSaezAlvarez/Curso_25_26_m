@@ -9,17 +9,17 @@ console.log(frutas.at(-x)) devuelve la posición x empezando por el último elem
 frutas.splice(1,2,"pera") === Elimina dos (segundo parámetro) elementos empezando por la posición 1 (primer parámetro) 
 y sustituye el tercer parámetro en la posición de los elementos eliminados
 
-.concat - Se usa para concatenar dos o más arrays al final como con push. No muta el array original
+.concat - Se usa para concatenar dos o más arrays al final como con push. MUTA el array original
 
 frutas.concat([otro array])
 
-const array = [...frutas, ...edades] los 3 puntos separan los elementos del array
+const array = [...frutas, ...edades] los 3 puntos separan los elementos del array (spread operator)
 
-SET -- otro tipo de datos (que sean únicos)
+SET -- otro tipo de datos (que sean únicos, no mete duplicados)
 const pesos = [4,5,3,2,4,2,4,4,4,4,7,6,5]
 
 const sinDobles = new Set(pesos) (no es un array)
-[...new Set[pesos]] (lo vuelve un arary)
+[...new Set[pesos]] (lo vuelve un array)
 
 .reduce - reducir un array a un unico valor
 pesos.reduce((acumulador, elemento, indice, array)=> aqui va la logica, valor inicial)
@@ -95,7 +95,6 @@ total+usuario.data.books*28,0))
 console.log(usuarios.reduce((acc,usuario)=>
     usuario.data.books==0 ? usuario.name:acc),
 "")
-
 */
 
 const productos = [
@@ -107,8 +106,19 @@ const productos = [
     {id: 6, nombre: "Pantalón", precio: 60, stock: 5, categoria: "Ropa"},
 ]
 
-//Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoria ropa
+//Obtener un array con los nombres de todos los productos agotados
+const productoAgotado = productos.filter(producto => producto.stock === 0);
+console.log(productoAgotado);
 
+// Calcular el valor total del inventario (precio * stock) de todos los productos
+const dineroInvertido = productos.reduce((total, producto) => total + producto.precio * producto.stock, 0);
+console.log(dineroInvertido)
+
+//Filtrar los productos que pertenecen a la categoría llamada "Tecnología y tienen un precio mayor a 500"
+const filterTech = productos.filter(producto => producto.categoria === "Tecnología" && producto.precio > 500);
+console.log(filterTech)
+
+//Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoria ropa
 const ropaDescuento = productos.map(producto => 
     producto.categoria === "Ropa" ? {...producto, precio:producto.precio*0.9} : producto
 );
