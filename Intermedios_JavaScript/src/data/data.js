@@ -1,0 +1,54 @@
+export const producto1 = 
+[
+    {
+        id:1,
+        nombre:"laptop",
+        precio:1000,
+        fabricante:{
+            nombre:"HP",
+            pais:"USA",
+            contacto:{
+                email:"info@hp.com",
+                telefono:"+1-555-0123",
+            },
+        },
+        especificaciones:{
+            ram:"16GB",
+            cpu:"Intel i7"
+        }
+    },
+    {
+        id:2,
+        nombre:"pc",
+        precio:50,
+        fabricante:{
+            nombre:"Acer",
+            pais:"USA",
+            contacto:{
+                email:"info@logitech.com",
+                telefono:"+1-555-4567",
+            },
+        },
+        especificaciones:{
+            ram:"8GB",
+            cpu:"Intel i5"
+        }
+    },
+    {
+        id:3,
+        nombre:"portatil2",
+        precio:200,
+        fabricante:{
+            nombre:"Lenovo",
+            pais:"China",
+            contacto:{
+                email:"info@lenovo.com",
+                telefono:"+1-555-7890",
+            },
+        },
+        especificaciones:{
+            ram:"4GB",
+            cpu:"Intel i3"
+        }
+    }
+]

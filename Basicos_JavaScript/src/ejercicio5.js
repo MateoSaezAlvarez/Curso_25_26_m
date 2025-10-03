@@ -9,6 +9,8 @@ console.log(frutas.at(-x)) devuelve la posición x empezando por el último elem
 frutas.splice(1,2,"pera") === Elimina dos (segundo parámetro) elementos empezando por la posición 1 (primer parámetro) 
 y sustituye el tercer parámetro en la posición de los elementos eliminados
 
+.slice - Se usa para cortar un array desde una posición determinada
+
 .concat - Se usa para concatenar dos o más arrays al final como con push. MUTA el array original
 
 frutas.concat([otro array])
