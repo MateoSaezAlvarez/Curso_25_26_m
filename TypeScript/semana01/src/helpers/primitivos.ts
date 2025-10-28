@@ -180,7 +180,9 @@ const calculadora = (operacion:Operacion):number=>{
         case "sumar":
             return operacion.operando1 + operacion.operando2;
         case "restar":
-            return operacion.operando1 - operacion.operando2;
+            return operacion.operando1>operacion.operando2 ? 
+            operacion.operando1-operacion.operando2 : 
+            operacion.operando2-operacion.operando1;
         case "multiplicar":
             return operacion.operando1 * operacion.operando2;
         case "dividir":
@@ -189,3 +191,40 @@ const calculadora = (operacion:Operacion):number=>{
             return 0;
     }
 }
+
+calculadora({operacion:"sumar",operando1:10,operando2:5});
+calculadora({operacion:"restar",operando1:10,operando2:5});
+calculadora({operacion:"multiplicar",operando1:10,operando2:5});
+calculadora({operacion:"dividir",operando1:10,operando2:5});
+
+calculadora({operacion:"sumar",operando1:10,operando2:0});
+calculadora({operacion:"restar",operando1:10,operando2:0});
+calculadora({operacion:"multiplicar",operando1:10,operando2:0});
+calculadora({operacion:"dividir",operando1:10,operando2:0});
+
+// type Datos = {
+//     nombreEmpresa:string
+// }
+
+const edades = new Map<string, number> ()
+
+edades.set("mateo", 20);
+edades.has("mateo");
+
+interface Datos {
+    nombre:string;
+    email:string;
+    cp:number;
+}
+
+const misUsuarios = new Map<string, Datos[]>();
+
+misUsuarios.set("mateo", [{
+    nombre:"mateo",
+    email:"mateo@gmail.com",
+    cp:18007
+}]);
+
+const mySet = new Set<number>();
+
+mySet.add(19);
